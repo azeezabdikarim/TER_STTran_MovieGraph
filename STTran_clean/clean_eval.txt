@@ -1,0 +1,50 @@
+mode : sgdet
+save_path : data/
+model_path : pretrained_models/sgdet.tar
+data_path : ../ActionGenome/dataset/ag/
+datasize : large
+ckpt : None
+optimizer : adamw
+lr : 1e-05
+nepoch : 10
+enc_layer : 1
+dec_layer : 3
+bce_loss : False
+-------loading annotations---------slowly-----------
+--------------------finish!-------------------------
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+There are 1737 videos and 54429 valid frames
+48 videos are invalid (no person), remove them
+20 videos are invalid (only one frame), remove them
+8472 frames have no human bbox in GT, remove them!
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+word vector location: data data
+loading word vectors from data/data/glove.6B.200d.pt
+word vector location: /home/cong/Dokumente/neural-motifs-master/data /hom
+loading word vectors from data//home/cong/Dokumente/neural-motifs-master/data/glove.6B.200d.pt
+__background__ -> __background__ 
+fail on __background__
+**************************************************
+CKPT pretrained_models/sgdet.tar is loaded
+Traceback (most recent call last):
+  File "test.py", line 80, in <module>
+    entry = object_detector(im_data, im_info, gt_boxes, num_boxes, gt_annotation, im_all=None)
+  File "/opt/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/nfshome/students/aa211327/STTran/lib/object_detector.py", line 63, in forward
+    inputs_gtboxes, inputs_numboxes)
+  File "/opt/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/nfshome/students/aa211327/STTran/fasterRCNN/lib/model/faster_rcnn/faster_rcnn.py", line 51, in forward
+    base_feat = self.RCNN_base(im_data)
+  File "/opt/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/opt/anaconda3/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
+    input = module(input)
+  File "/opt/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/opt/anaconda3/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 399, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/opt/anaconda3/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 396, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: CUDA out of memory. Tried to allocate 392.00 MiB (GPU 0; 24.00 GiB total capacity; 1.26 GiB already allocated; 309.79 MiB free; 1.31 GiB reserved in total by PyTorch)

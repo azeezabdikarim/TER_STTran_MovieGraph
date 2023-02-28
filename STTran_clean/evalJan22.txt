@@ -1,0 +1,48 @@
+/opt/anaconda3/lib/python3.7/site-packages/torch/nn/functional.py:4737: UserWarning: Byte tensor for key_padding_mask in nn.MultiheadAttention is deprecated. Use bool tensor instead.
+  "Byte tensor for key_padding_mask in nn.MultiheadAttention is deprecated. Use bool tensor instead."
+mode : sgdet
+save_path : data/
+model_path : pretrained_models/sgdet.tar
+data_path : ../ActionGenome/dataset/ag/
+datasize : large
+ckpt : None
+optimizer : adamw
+lr : 1e-05
+nepoch : 10
+enc_layer : 1
+dec_layer : 3
+bce_loss : False
+-------loading annotations---------slowly-----------
+--------------------finish!-------------------------
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+There are 1737 videos and 54429 valid frames
+48 videos are invalid (no person), remove them
+20 videos are invalid (only one frame), remove them
+8472 frames have no human bbox in GT, remove them!
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+word vector location: data data
+loading word vectors from data/data/glove.6B.200d.pt
+word vector location: /home/cong/Dokumente/neural-motifs-master/data /hom
+loading word vectors from data//home/cong/Dokumente/neural-motifs-master/data/glove.6B.200d.pt
+__background__ -> __background__ 
+fail on __background__
+**************************************************
+CKPT pretrained_models/sgdet.tar is loaded
+-------------------------with constraint-------------------------------
+======================sgdet============================
+R@10: 0.252378
+R@20: 0.340888
+R@50: 0.370043
+R@100: 0.370112
+-------------------------semi constraint-------------------------------
+======================sgdet============================
+R@10: 0.246094
+R@20: 0.359187
+R@50: 0.440247
+R@100: 0.443180
+-------------------------no constraint-------------------------------
+======================sgdet============================
+R@10: 0.245849
+R@20: 0.361786
+R@50: 0.488330
+R@100: 0.517514
