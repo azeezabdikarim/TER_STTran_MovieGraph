@@ -36,8 +36,8 @@ scene_times[['start_frame', 'end_frame']] = scene_times[['start_frame', 'end_fra
 scene_times['scene_id'] = range(1, len(scene_times)+1)
 scene_times.index = scene_times['scene_id']
 
-#movie starts with a 5 second delay
-delay = 5
+#movie starts with a 4 second delay
+delay = 4
 scene_times['start_time'] = scene_times['start_time'] + delay
 scene_times['end_time'] = scene_times['end_time'] + delay
 scene_times.to_csv('scenes_defined.csv', index=False)
